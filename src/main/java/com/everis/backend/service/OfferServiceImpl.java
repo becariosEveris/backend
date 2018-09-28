@@ -21,18 +21,20 @@ public class OfferServiceImpl implements OfferService{
 	@Override
 	public Offer readOffer(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
+		return oRepo.getOne(id);
 	}
 
 	@Override
-	public Offer updateOffer(Integer id) {
+	public Offer updateOffer(Offer o) {
 		// TODO Auto-generated method stub
-		return null;
+		return oRepo.save(o);
 	}
 
 	@Override
 	public void deleteOffer(Integer id) {
-		// TODO Auto-generated method stub
+		Offer o = new Offer();
+		o.setId(id);
+		oRepo.delete(o);
 		
 	}
 

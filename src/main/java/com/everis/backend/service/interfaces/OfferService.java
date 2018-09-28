@@ -8,7 +8,7 @@ public interface OfferService {
 	
 	public Offer readOffer(Integer id);
 	
-	public Offer updateOffer(Integer id);
+	public Offer updateOffer(Offer offer);
 	
 	public void deleteOffer(Integer id);
 }
