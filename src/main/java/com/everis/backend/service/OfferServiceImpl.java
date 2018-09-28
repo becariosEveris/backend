@@ -1,34 +1,39 @@
 package com.everis.backend.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.everis.backend.interfaces.OfferRepository;
 import com.everis.backend.model.Offer;
+import com.everis.backend.repository.OfferRepository;
+import com.everis.backend.service.interfaces.OfferService;
 
-public class OfferServiceImpl implements OfferService {
-
+@Service
+public class OfferServiceImpl implements OfferService{
+	
 	@Autowired
-	private OfferRepository offerRepository;
-	
+	OfferRepository oRepo;
 	@Override
-	public Offer findById(Integer id) {
-		return this.offerRepository.findById(id).get();
+	public Offer createOffer(Offer o) {
+		// TODO Auto-generated method stub
+		return oRepo.save(o);
 	}
-	
-	public void createOffer(Offer offer) {
-		this.offerRepository.save(offer);
+
+	@Override
+	public Offer readOffer(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public void updateOffer(Offer offer) {
-		this.offerRepository.save(offer);
+
+	@Override
+	public Offer updateOffer(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
-	
-	public void readOffer(Offer offer) {
-		this.offerRepository.getOne(offer.getId());
-	}
-	
-	public void deleteOffer(Offer offer) {
-		this.offerRepository.delete(offer);
+
+	@Override
+	public void deleteOffer(Integer id) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
