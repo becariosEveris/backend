@@ -10,7 +10,7 @@ import com.everis.backend.model.Offer;
 public interface OfferRepository extends JpaRepository<Offer, Integer>{
 	
 	Optional<Offer> findById(Integer id);
-
+	
 	Offer save(Offer o);
 
 	void delete(Optional<Offer> offer);
